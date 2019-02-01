@@ -1,11 +1,16 @@
 {
     "name": "smock-core",
-    "version": "0.0.2",
+    "version": "2.0.0",
     "description": "SMock核心源码",
-    "main": "./swagger/swagger",
+    "main": "./dist/main",
     "repository": {
         "type": "git",
         "url": "https://github.com/jdf2e/SMock.git"
+    },
+    "scripts": {
+        "test": "jest --config=jest.config.json",
+        "dev": "cross-env NODE_ENV=development gulp",
+        "build": "gulp"
     },
     "keywords": [
         "swagger",
@@ -19,9 +24,32 @@
     "license": "MIT",
     "dependencies": {
         "body-parser": "^1.18.3",
+        "clone": "^2.1.2",
         "commander": "^2.19.0",
         "express": "^4.16.3",
+        "gulp": "^4.0.0",
+        "gulp-typescript": "^5.0.0",
+        "gulp-uglify-es": "^1.0.4",
         "mockjs": "^1.0.1-beta3",
-        "request": "^2.87.0"
+        "typescript": "^3.2.2"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/jest": "^23.3.12",
+        "@types/request": "^2.48.1",
+        "@types/request-promise-native": "^1.0.15",
+        "babel-env": "^2.4.1",
+        "babel-jest": "^23.6.0",
+        "child_process": "^1.0.2",
+        "cross-env": "^5.2.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "jest": "^23.6.0",
+        "node-sass": "^4.11.0",
+        "regenerator-runtime": "^0.13.1",
+        "request": "^2.88.0",
+        "request-promise-native": "^1.0.5",
+        "ts-jest": "^23.10.5"
     }
 }
