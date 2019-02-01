@@ -19,25 +19,30 @@ npm install smock-core --save-dev
 ### 调用
 
 ```bash
-let smockCore = require('smock-core');
-smockCore.init({
-  host:'xxx.xxx.xx.xx',
-  domain:'xxx.com',
-  projectName:'test'
+let Core = require('smock-core').Core;
+new Core({
+  docPath:'xxx.xxx.xx.xx',
+  docPort:'80',
+  path:''
 })
 ```
 
 ### 参数说明
 
-|Attributes|forma|describe
-|---|---|---|
-|host| string| 需要mock的文档地址ip或者域名
-|domain|string| 需要mock的文档访问域名。一般和host配合使用，如果文档是IP不能直接访问的形式，那么此处需要传入相应的值
-|path|string| 需要mock的文档数据请求路径，在swagger文档页面可以找到，如：/v2/api-docs
-|port| integer| 需要mock的文档地址端口号， 默认80，如果协议配置为https，此参数则变为443
-|projectName| string| 项目名，默认值swaggermock
-|mockPort| string| 本地mock服务启动后的端口，默认为3000
-|customProtocol| string| swagger文档支持的协议请求 http/https
+|Attributes|forma|describe|default|
+|---|---|---|---|
+|type|String|文档数据源类型，暂只支持swagger|swagger|
+|docPath|String|type为swagger时，swagger文档访问路径|-|
+|docPort|Number|type为swagger时，swagger的文档端口号|80|
+|path|String|type为swagger时，swagger模式接口路径|/v2/api-docs|
+|method|String|type为swagger时，文档数据请求方式|GET|
+|realHostName|String|项目上线后访问的真实域名|-|
+|mockPort|Number|启动服务的端口号|3000|
+|customProtocol|String|type为swagger时，具体文档服务器协议http或https|http|
+|headers|Object|创建本地服务器时接口header附加参数|-|
+|jsPath|String|创建服务器时抽取Url路径文件的存储路径|-|
+|descInclude|Array|调用接口时展示接口文档的白名单|-|
+|override|Boolean|重启服务时是否重新刷新数据|false|
 
 ## 代码架构
 

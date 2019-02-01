@@ -16,7 +16,7 @@ class Core {
 			{
 				type: 'swagger',
 				docPath: '', //swagger文档访问路径
-				docPort: '', //swagger文档端口号
+				docPort: 80, //swagger文档端口号
 				path: '/v2/api-docs', //swagger模式路径
 				method: 'GET', //文档数据请求方式
 				realHostName: '', // 项目上线后访问的真实域名
