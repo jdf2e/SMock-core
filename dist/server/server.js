@@ -57,6 +57,9 @@ class Server extends base_1.Base {
                         res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
                         res.header("X-Powered-By", ' 3.2.1');
                         res.header("Content-Type", "application/json;charset=utf-8");
+                        for (let prop in self.option.headers) {
+                            res.header(prop, self.option.headers[prop]);
+                        }
                         //创建接口描述页面
                         let descUrl = desc.getDescribeHtmlUrl(element.id);
                         utils_1.log(descUrl);

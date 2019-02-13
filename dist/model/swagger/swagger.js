@@ -59,8 +59,7 @@ class Swagger {
                     let d = {};
                     let item = apis[prop];
                     d.url = prop;
-                    if (d.url != '/api/car/binding')
-                        continue;
+                    // if(d.url != '/api/service/{serviceId}') continue;
                     let dataModelFlag = '';
                     for (let type in item) {
                         // let descs:any = [];

@@ -10,7 +10,7 @@ class Core {
         this.options = Object.assign({
             type: 'swagger',
             docPath: '',
-            docPort: '',
+            docPort: 80,
             path: '/v2/api-docs',
             method: 'GET',
             realHostName: '',
