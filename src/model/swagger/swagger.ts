@@ -88,7 +88,6 @@ class Swagger {
                 }
             }
             Promise.all(allDealDataPromises).then(() => {
-                console.log(result);
                 resolve(result);
             })
         })        

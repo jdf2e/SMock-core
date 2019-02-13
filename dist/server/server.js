@@ -48,7 +48,6 @@ class Server extends base_1.Base {
                 for (let index = 0; index < data.length; index++) {
                     const element = data[index];
                     let realUrl = utils_1.dealUrl(element.url);
-                    // console.log(realUrl,element.type,element.data,'server');
                     app[element.type](realUrl, function (req, res) {
                         res.header("Access-Control-Allow-Origin", req.headers.origin);
                         res.header('Access-Control-Allow-Credentials', true); //告诉客户端可以在HTTP请求中带上Cookie
@@ -112,7 +111,6 @@ class Server extends base_1.Base {
                     url: opts.url
                 })
                     .then((data) => {
-                    console.log(opts.url, data.data);
                     resolve(data.data);
                 });
             });
