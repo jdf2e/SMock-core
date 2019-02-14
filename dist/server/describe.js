@@ -4,7 +4,6 @@ const base_1 = require("../base/base");
 const utils_1 = require("./../utils/utils");
 const fs_1 = require("fs");
 const child_process_1 = require("child_process");
-let path = require('path');
 class Describe extends base_1.Base {
     constructor(opts, data) {
         super(opts, data);
@@ -79,7 +78,7 @@ class Describe extends base_1.Base {
             </table>
             `;
         }
-        let file = fs_1.readFileSync(path.join(process.cwd(), '/dist/html/temp.html'), 'utf8');
+        let file = fs_1.readFileSync(utils_1.join(__dirname, './../html/temp.html'), 'utf8');
         result = file.replace('{{CODE}}', html);
         result = result.replace('{{API}}', data.url);
         result = result.replace('{{DESC}}', data.desc);

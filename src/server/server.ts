@@ -1,6 +1,6 @@
 import { Base } from './../base/base';
 import { Data, Config, UrlData } from './../model/dataModel';
-import { log,dealUrl,join2 } from './../utils/utils';
+import { log,dealUrl,join2, join } from './../utils/utils';
 import { mockDirName } from './../utils/dict';
 import { Describe } from './describe';
 import { validParam } from './valid';
@@ -28,8 +28,8 @@ class Server extends Base{
         });
     }
     // 托管静态页面，如接口描述页等
-    addStatic() {       
-        app.use(express.static('dist/html'));
+    addStatic() {
+        app.use(express.static(join(__dirname, './../html')));
     }
 
     // 注入接口
@@ -58,7 +58,7 @@ class Server extends Base{
                     }
                     //创建接口描述页面
                     let descUrl = desc.getDescribeHtmlUrl(element.id);
-                    log(descUrl);
+                    log('调用接口的文档链接：'+ descUrl);
                     if(self.isInclude(element.id, self.option.descInclude)) {
                         desc.openAPIDesc(descUrl);
                     }

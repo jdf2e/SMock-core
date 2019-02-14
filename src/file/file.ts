@@ -31,7 +31,6 @@ class File extends Base {
 			let jsContent = this.customJsTpl(urlDatas);
 			let customFileDir = join(process.cwd(), mockDirName); //默认mock相关文件目录名
 			let jsFilePath = join2(process.cwd(), mockDirName, `${urlsRealName}.js`); //默认生成位置，如果用户配置则生成至用户配置的位置
-
 			if (option.jsPath) {
 				//用户如果有自定义文件目录，则需要生成至用户自定义目录
 				customFileDir = join(process.cwd(), option.jsPath);

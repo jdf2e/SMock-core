@@ -1,9 +1,8 @@
 import { Base } from "../base/base";
 import { Data, Config } from './../model/dataModel';
-import { getDataFromArrayById } from './../utils/utils';
+import { getDataFromArrayById, join } from './../utils/utils';
 import { readFileSync } from "fs";
 import { exec } from 'child_process';
-let path = require('path');
 
 class Describe extends Base {
     constructor(opts?: Config, data?: Data) {
@@ -82,8 +81,7 @@ class Describe extends Base {
             </table>
             `;  
         }
-        
-        let file = readFileSync(path.join(process.cwd(),'/dist/html/temp.html'), 'utf8');
+        let file = readFileSync(join(__dirname, './../html/temp.html'), 'utf8');
         result = file.replace('{{CODE}}', html);
         result = result.replace('{{API}}', data.url);
         result = result.replace('{{DESC}}', data.desc);

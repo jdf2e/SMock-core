@@ -32,7 +32,7 @@ class Server extends base_1.Base {
     }
     // 托管静态页面，如接口描述页等
     addStatic() {
-        app.use(express.static('dist/html'));
+        app.use(express.static(utils_1.join(__dirname, './../html')));
     }
     // 注入接口
     addAPI() {
@@ -61,7 +61,7 @@ class Server extends base_1.Base {
                         }
                         //创建接口描述页面
                         let descUrl = desc.getDescribeHtmlUrl(element.id);
-                        utils_1.log(descUrl);
+                        utils_1.log('调用接口的文档链接：' + descUrl);
                         if (self.isInclude(element.id, self.option.descInclude)) {
                             desc.openAPIDesc(descUrl);
                         }

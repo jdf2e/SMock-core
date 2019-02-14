@@ -23,7 +23,7 @@ ${moduleTpl()}
 //创建host部分
 function hostTpl() {
 	let tpl = `var isDebug = (window.location.href).indexOf('debug') > -1;
-    var host = isDebug?'127.0.0.1:${port}':'${hostname}';`;
+    var host = isDebug?'//127.0.0.1:${port}':'//${hostname}';`;
 	return tpl;
 }
 

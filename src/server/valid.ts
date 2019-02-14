@@ -34,7 +34,11 @@ function validType(inParams: any, data: any) {
         let param = getParamByName(prop, data.params);
         if(!param) return error;
         if( typeof inParams[prop] != param.type) {
-            error.push(param.value);
+            //如果类型为int，但url的方式传参会自动转换为字符串，我们要转换
+            console.log(param.type, inParams[prop], isNaN(parseInt(inParams[prop])));
+            if(!(param.type == 'integer' && !isNaN(parseInt(inParams[prop])))) {
+                error.push(param.value);
+            }
         }
     }
     return error;
