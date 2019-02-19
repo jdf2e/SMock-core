@@ -52,7 +52,7 @@ function urlTpl() {
 //创建模块依赖部分
 function moduleTpl() {
     let moduleTpl = `
-    exports.idDebug = isDebug;
+    exports.isDebug = isDebug;
     exports.host = host;
     exports.url = url;
     exports.restfulURL = restfulURL;

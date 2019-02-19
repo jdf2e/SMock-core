@@ -4,6 +4,7 @@ const swagger_1 = require("./model/swagger/swagger");
 const file_1 = require("./file/file");
 const server_1 = require("./server/server");
 const utils_1 = require("./utils/utils");
+const log_1 = require("./model/log");
 class Core {
     constructor(opts) {
         // let config = Config;
@@ -21,6 +22,11 @@ class Core {
             descInclude: [],
             override: false
         }, opts);
+        //确保地址存在
+        if (this.options.docPath == "") {
+            utils_1.log(log_1.docPathError);
+            return;
+        }
         //不同类型跳转到不同数据层
         switch (this.options.type) {
             case 'swagger':

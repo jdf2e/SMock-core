@@ -3,6 +3,7 @@ import { Config, Data } from './model/dataModel';
 import { File } from './file/file';
 import { Server } from './server/server';
 import { log, isNew } from './utils/utils';
+import { docPathError } from './model/log';
 class Core {
 	// 缓存参数
 	options: Config;
@@ -29,6 +30,11 @@ class Core {
 			},
 			opts
 		);
+		//确保地址存在
+		if(this.options.docPath == "") {
+			log(docPathError);
+			return;
+		}
 		//不同类型跳转到不同数据层
 		switch (this.options.type) {
 			case 'swagger':

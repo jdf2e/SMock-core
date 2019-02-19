@@ -5,7 +5,7 @@
     (factory((global.SMOCK = {})));
 }(this, (function(exports) { 'use strict';
     var isDebug = (window.location.href).indexOf('debug') > -1;
-    var host = isDebug?'127.0.0.1:4000':'m-svc.jd.com';
+    var host = isDebug?'//127.0.0.1:4000':'//m-svc.jd.com';
     var restfulURL = function(url, param) {
         let result = url;
         for(var prop in param) {
