@@ -1,3 +1,8 @@
+### 后续计划
+
+- 导出的URL支持es6 module引入方式
+- smock服务启动后，修改json文件，服务器热更新
+
 ### 项目技术选型
 
 - TypeScript架构开发
