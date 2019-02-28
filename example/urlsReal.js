@@ -5,7 +5,7 @@
     (factory((global.SMOCK = {})));
 }(this, (function(exports) { 'use strict';
     var isDebug = (window.location.href).indexOf('debug') > -1;
-    var host = isDebug?'//127.0.0.1:4000':'//m-svc.jd.com';
+    var host = isDebug?'//127.0.0.1:3000':'//m-svc.jd.com';
     var restfulURL = function(url, param) {
         let result = url;
         for(var prop in param) {
@@ -17,9 +17,6 @@
         'getAuthCodeUsingGET': {
             url: host + '/api/auth/code',
             type: 'get'
-        },'errorUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
         },'getSmsVCodeUsingGET': {
             url: host + '/api/auth/code/binding/code',
             type: 'get'
@@ -110,10 +107,28 @@
         },'getStoresInAreaUsingGET': {
             url: host + '/api/store/stores',
             type: 'get'
+        },'errorHtmlUsingPATCH': {
+            url: host + '/error',
+            type: 'patch'
+        },'errorHtmlUsingPATCH': {
+            url: host + '/error',
+            type: 'patch'
+        },'errorHtmlUsingPATCH': {
+            url: host + '/error',
+            type: 'patch'
+        },'errorHtmlUsingPATCH': {
+            url: host + '/error',
+            type: 'patch'
+        },'errorHtmlUsingPATCH': {
+            url: host + '/error',
+            type: 'patch'
+        },'errorHtmlUsingPATCH': {
+            url: host + '/error',
+            type: 'patch'
         }
     }
 
-    exports.idDebug = isDebug;
+    exports.isDebug = isDebug;
     exports.host = host;
     exports.url = url;
     exports.restfulURL = restfulURL;

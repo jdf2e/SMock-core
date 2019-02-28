@@ -4,6 +4,9 @@ let fs = require('fs');
 let path = require('path');
 const dict_1 = require("./dict");
 function dealConfig(c) {
+    if (c.docPath) {
+        c.docPath = parseURL(c.docPath);
+    }
     if (c.domain) {
         c.headers = {
             host: c.domain
@@ -17,6 +20,11 @@ function dealConfig(c) {
     return c; // Object.assign(defaultConfig, c);
 }
 exports.dealConfig = dealConfig;
+function parseURL(url) {
+    var a = url.replace("http://", "").replace("https://", "");
+    return a.substring(0, a.indexOf("/") > 0 ? a.indexOf("/") : a.length);
+}
+exports.parseURL = parseURL;
 function log(msg) {
     console.log(msg);
 }

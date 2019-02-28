@@ -2,6 +2,9 @@ let fs = require('fs');
 let path = require('path');
 import { mockDirName } from './dict';
 export function dealConfig(c: any) {
+	if(c.docPath) {
+        c.docPath = parseURL(c.docPath);
+    }
 	if (c.domain) {
 		c.headers = {
 			host: c.domain
@@ -14,7 +17,11 @@ export function dealConfig(c: any) {
 	// c.mockDirName = `${c.projectName?c.projectName:defaultConfig.projectName}mock`;
 	return c; // Object.assign(defaultConfig, c);
 }
-
+function parseURL(url: any) {
+	var a = url.replace("http://","").replace("https://","");
+	return a.substring(0,a.indexOf("/")>0?a.indexOf("/"):a.length);
+}
+exports.parseURL = parseURL;
 export function log(msg: any) {
 	console.log(msg);
 }
