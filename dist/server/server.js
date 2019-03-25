@@ -56,9 +56,6 @@ class Server extends base_1.Base {
                         res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
                         res.header("X-Powered-By", ' 3.2.1');
                         res.header("Content-Type", "application/json;charset=utf-8");
-                        for (let prop in self.option.headers) {
-                            res.header(prop, self.option.headers[prop]);
-                        }
                         //创建接口描述页面
                         let descUrl = desc.getDescribeHtmlUrl(element.id);
                         utils_1.log('调用接口的文档链接：' + descUrl);
@@ -106,9 +103,15 @@ class Server extends base_1.Base {
     //获取数据
     fetchData(opts) {
         return __awaiter(this, void 0, void 0, function* () {
+            let self = this;
             return yield new Promise((resolve, reject) => {
+                let header = {};
+                for (let prop in self.option.headers) {
+                    header(prop, self.option.headers[prop]);
+                }
                 axios({
-                    url: opts.url
+                    url: opts.url,
+                    headers: header
                 })
                     .then((data) => {
                     resolve(data.data);
