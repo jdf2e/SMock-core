@@ -36,7 +36,7 @@ class Swagger {
         return __awaiter(this, void 0, void 0, function* () {
             let server = new server_1.Server(this.config);
             let result;
-            let url = `${this.config.customProtocol}://${this.config.docPath}${this.config.path}`;
+            let url = `${this.config.customProtocol}://${this.config.docPath}${this.config.path}:${this.config.docPort}`;
             yield server.fetchData({
                 url: url
             })

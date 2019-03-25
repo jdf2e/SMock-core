@@ -26,7 +26,7 @@ class Swagger {
     async getDataFromServer(): Promise<Object> {
         let server = new Server(this.config);
         let result;
-        let url = `${this.config.customProtocol}://${this.config.docPath}${this.config.path}`;
+        let url = `${this.config.customProtocol}://${this.config.docPath}${this.config.path}:${this.config.docPort}`;
         await server.fetchData(
             {
                 url: url
