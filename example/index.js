@@ -1,8 +1,9 @@
 
 var Core = require('./../dist/main.js').Core;
 new Core({
-    "docPath": "",
+    "docPath": "m-svc.jd.com",
     "realHostName": "m-svc.jd.com",
+    "docPort": "11000",
     "mockPort": 3000,
     "jsPath": "example/",
     "headers": {
