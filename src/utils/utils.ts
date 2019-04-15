@@ -151,3 +151,6 @@ export function keyInData(id: string, arr: any) {
 	}
 	return result;
 }
+
+export function getHost(url:string) {
+}

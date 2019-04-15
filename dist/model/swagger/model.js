@@ -130,7 +130,12 @@ function getParamData(params, definitions) {
         if (param.schema) {
             p.type = 'object';
             p.value = param.name;
-            p.child = getParamSchemaData(param.schema['$ref'], definitions);
+            if (param.schema['$ref']) {
+                p.child = getParamSchemaData(param.schema['$ref'], definitions);
+            }
+            else {
+                p.type = param.schema.type;
+            }
             p.required = param.required;
         }
         else {

@@ -5,7 +5,7 @@
     (factory((global.SMOCK = {})));
 }(this, (function(exports) { 'use strict';
     var isDebug = (window.location.href).indexOf('debug') > -1;
-    var host = isDebug?'//127.0.0.1:3000':'//m-svc.jd.com';
+    var host = isDebug?'//127.0.0.1:3000':'//192.168.128.83';
     var restfulURL = function(url, param) {
         let result = url;
         for(var prop in param) {
@@ -14,117 +14,87 @@
         return result;
     }
     var url = {
-        'getAuthCodeUsingGET': {
-            url: host + '/api/auth/code',
+        'getBannersUsingGET': {
+            url: host + '/stryview/v1/banner',
             type: 'get'
-        },'getSmsVCodeUsingGET': {
-            url: host + '/api/auth/code/binding/code',
+        },'getProjectProgressUsingGET': {
+            url: host + '/stryview/v1/jobProgress',
             type: 'get'
-        },'submitBookingUsingPOST': {
-            url: host + '/api/booking',
+        },'loginInfoUsingGET': {
+            url: host + '/stryview/v1/loginInfo',
+            type: 'get'
+        },'menusUsingGET': {
+            url: host + '/stryview/v1/menus',
+            type: 'get'
+        },'getMyStrategyUsingGET': {
+            url: host + '/stryview/v1/myStrategyHouse',
+            type: 'get'
+        },'strategyUsingPOST': {
+            url: host + '/stryview/v1/strategy',
             type: 'post'
-        },'cancelBookingUsingGET': {
-            url: host + '/api/booking/cancel',
-            type: 'get'
-        },'applyBookingUsingGET': {
-            url: host + '/api/booking/service/{serviceId}',
-            type: 'get'
-        },'getBookingInfoUsingGET': {
-            url: host + '/api/booking/{bookingId}',
-            type: 'get'
-        },'activeCarUsingPUT': {
-            url: host + '/api/car/active',
-            type: 'put'
-        },'bindCarUsingPOST': {
-            url: host + '/api/car/binding',
+        },'strategy01UsingPOST': {
+            url: host + '/stryview/v1/strategy01',
             type: 'post'
-        },'getCarBrandInfoUsingGET': {
-            url: host + '/api/car/brands/{productSkuId}',
-            type: 'get'
-        },'getModelUsingGET': {
-            url: host + '/api/car/model/{productSkuId}/{seriesYearId}',
-            type: 'get'
-        },'isAdaptUsingGET': {
-            url: host + '/api/car/product',
-            type: 'get'
-        },'getCropsAndSeriesUsingGET': {
-            url: host + '/api/car/series/{productSkuId}/{brandId}',
-            type: 'get'
-        },'getSeriesYearUsingGET': {
-            url: host + '/api/car/seriesYearId/{productSkuId}/{seriesId}',
-            type: 'get'
-        },'getCityUsingGET': {
-            url: host + '/api/city/current/location',
-            type: 'get'
-        },'queryCityByCoordinateUsingGET': {
-            url: host + '/api/common/area/city/queryByCoordinate',
-            type: 'get'
-        },'getCarBrandInfoUsingGET_1': {
-            url: host + '/api/guide/brands/{productSkuId}',
-            type: 'get'
-        },'getModelUsingGET_1': {
-            url: host + '/api/guide/model/{productSkuId}/{seriesYearId}',
-            type: 'get'
-        },'getGuideProductsUsingGET': {
-            url: host + '/api/guide/product',
-            type: 'get'
-        },'getCropsAndSeriesUsingGET_1': {
-            url: host + '/api/guide/series/{productSkuId}/{brandId}',
-            type: 'get'
-        },'getSeriesYearUsingGET_1': {
-            url: host + '/api/guide/seriesYearId/{productSkuId}/{seriesId}',
-            type: 'get'
-        },'getAreaStoreUsingGET': {
-            url: host + '/api/guide/store/area',
-            type: 'get'
-        },'getStoreDetailUsingGET': {
-            url: host + '/api/guide/store/detail',
-            type: 'get'
-        },'getNearbyStoreUsingGET': {
-            url: host + '/api/guide/store/nearby',
-            type: 'get'
-        },'isLoginUsingGET': {
-            url: host + '/api/login/isLogin',
-            type: 'get'
-        },'createUsingPOST': {
-            url: host + '/api/payment/verifyPayPassword',
+        },'strategy02UsingPOST': {
+            url: host + '/stryview/v1/strategy02',
             type: 'post'
-        },'getServiceListUsingGET': {
-            url: host + '/api/service',
+        },'strategy03UsingPOST': {
+            url: host + '/stryview/v1/strategy03',
+            type: 'post'
+        },'strategy04UsingPOST': {
+            url: host + '/stryview/v1/strategy04',
+            type: 'post'
+        },'strategy05UsingPOST': {
+            url: host + '/stryview/v1/strategy05',
+            type: 'post'
+        },'strategy06UsingPOST': {
+            url: host + '/stryview/v1/strategy06',
+            type: 'post'
+        },'strategy07UsingPOST': {
+            url: host + '/stryview/v1/strategy07',
+            type: 'post'
+        },'getStrategyUsingGET': {
+            url: host + '/stryview/v1/strategyHouse',
             type: 'get'
-        },'refundUsingGET': {
-            url: host + '/api/service/refund',
+        },'strategyHouseNavUsingGET': {
+            url: host + '/stryview/v1/strategyHouseNav',
             type: 'get'
-        },'getServiceUsingGET': {
-            url: host + '/api/service/{serviceId}',
+        },'strategyHouseUserUsingGET': {
+            url: host + '/stryview/v1/strategyHouseUser',
             type: 'get'
-        },'getStoreDetailUsingGET_1': {
-            url: host + '/api/store/detail',
+        },'saveStrategyPmoUsingPOST': {
+            url: host + '/stryview/v1/strategyPmo',
+            type: 'post'
+        },'deleteStrategyUserUsingDELETE': {
+            url: host + '/stryview/v1/strategyUser',
+            type: 'delete'
+        },'deleteStrategyUserUsingDELETE': {
+            url: host + '/stryview/v1/strategyUser',
+            type: 'delete'
+        },'getStrategyUserRoleUsingGET': {
+            url: host + '/stryview/v1/strategyUserRole',
             type: 'get'
-        },'getStoresUsingGET': {
-            url: host + '/api/store/nearby',
+        },'getStrategyWinDataUsingGET': {
+            url: host + '/stryview/v1/strategyWin',
             type: 'get'
-        },'getStoresInAreaUsingGET': {
-            url: host + '/api/store/stores',
+        },'getStrategyWinNavUsingGET': {
+            url: host + '/stryview/v1/strategyWinNav',
             type: 'get'
-        },'errorHtmlUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
-        },'errorHtmlUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
-        },'errorHtmlUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
-        },'errorHtmlUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
-        },'errorHtmlUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
-        },'errorHtmlUsingPATCH': {
-            url: host + '/error',
-            type: 'patch'
+        },'subDeptUsingGET': {
+            url: host + '/stryview/v1/subDept',
+            type: 'get'
+        },'switchStrategyUsingPOST': {
+            url: host + '/stryview/v1/switchStrategyHouse',
+            type: 'post'
+        },'saveTimeLineUsingPOST': {
+            url: host + '/stryview/v1/timeLine',
+            type: 'post'
+        },'userUsingGET': {
+            url: host + '/stryview/v1/user',
+            type: 'get'
+        },'yesOrNoUsingGET': {
+            url: host + '/stryview/v1/yesOrNo',
+            type: 'get'
         }
     }
 

@@ -158,3 +158,6 @@ function keyInData(id, arr) {
     return result;
 }
 exports.keyInData = keyInData;
+function getHost(url) {
+}
+exports.getHost = getHost;

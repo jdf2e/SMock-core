@@ -104,6 +104,7 @@ class Server extends base_1.Base {
     fetchData(opts) {
         return __awaiter(this, void 0, void 0, function* () {
             let self = this;
+            // let swaggerUtl = getHost(opts.url);
             return yield new Promise((resolve, reject) => {
                 let header = {};
                 for (let prop in self.option.headers) {

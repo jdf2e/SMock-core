@@ -122,7 +122,11 @@ export function getParamData(params:any, definitions:any):any {
         if(param.schema) {
             p.type = 'object';
             p.value = param.name;
-            p.child = getParamSchemaData(param.schema['$ref'], definitions);
+            if(param.schema['$ref']){
+                p.child = getParamSchemaData(param.schema['$ref'], definitions);
+            }else {
+                p.type = param.schema.type;
+            }
             p.required = param.required;
         }else {
             p.type = param.type? param.type: 'string';

@@ -99,6 +99,7 @@ class Server extends Base{
     //获取数据
     async fetchData(opts:UrlData): Promise<any> {
         let self = this;
+        // let swaggerUtl = getHost(opts.url);
         return await new Promise((resolve, reject) => {
             let header:any = {};
             for(let prop in self.option.headers) {
