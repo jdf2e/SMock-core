@@ -9,7 +9,7 @@ function getTpl(_urls, _port, _hostname) {
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global.SMOCK = {})));
+    (global = global || self, factory(global.SMOCK = {}));
 }(this, (function(exports) { 'use strict';
     ${hostTpl()}
     ${restfulTpl()}
